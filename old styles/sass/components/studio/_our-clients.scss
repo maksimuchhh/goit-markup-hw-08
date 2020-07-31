@@ -1,0 +1,37 @@
+.our-clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  text-align: center;
+  &-title {
+    margin-bottom: 50px;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-icon {
+    fill: $icon-fill-color;
+    transition: $transition-time-cubic fill;
+  }
+  &-item a {
+    @extend %flex-center;
+    width: 170px;
+    height: 90px;
+    margin: auto;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+    transition: $transition-time-cubic border-color;
+    & img {
+      display: block;
+    }
+    &:hover,
+    &:focus {
+      border-color: $accent-color;
+      transition: $transition-time-cubic border-color;
+      & .our-clients-icon {
+        fill: $accent-color;
+        transition: $transition-time-cubic fill;
+      }
+    }
+  }
+}

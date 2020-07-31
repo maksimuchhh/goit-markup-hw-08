@@ -1,0 +1,191 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: $transition-time-cubic opacity;
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    & .modal {
+      transform: translate(-50%, 50%);
+    }
+  }
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  max-width: 528px;
+  max-height: 581px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  color: $secondary-text-color;
+
+  transition: $transition-time-cubic transform;
+  &-close-button {
+    @extend %flex-center;
+    right: 8px;
+    top: 8px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  &-wrapper {
+    padding: 40px;
+  }
+  &-header {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    color: $primary-text-color;
+  }
+  &-form-container {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  &-icon {
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    width: 18px;
+    height: 18px;
+    fill: $primary-text-color;
+    transition: $transition-time-cubic fill;
+  }
+  &-input {
+    width: 448px;
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    &:focus {
+      border-color: $accent-color;
+      transition: $transition-time-cubic border-color;
+    }
+    &:not(:placeholder-shown) ~ .modal-label,
+    &:focus ~ .modal-label {
+      transition: $transition-time-cubic;
+      transition-property: color, transform;
+      transform: translate(-25px, -30px);
+      color: $accent-color;
+    }
+    &:focus-within ~ .modal-icon {
+      fill: $accent-color;
+      transition: $transition-time-cubic fill;
+    }
+  }
+  &-label {
+    position: absolute;
+    left: 42px;
+    top: 12px;
+    bottom: 12px;
+    letter-spacing: 0.14px;
+    cursor: pointer;
+    transform: translate(0px, 0px);
+    transition: $transition-time-cubic transform;
+  }
+  &-checkbox-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+  &-checkbox-label {
+    line-height: 1.71;
+    margin-left: 7px;
+    &:before {
+      position: absolute;
+      display: block;
+      top: 4px;
+      left: 0;
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: solid $primary-text-color 2px;
+      border-radius: 2px;
+      transition: $transition-time-cubic;
+      transition-property: background-color, border-color;
+    }
+  }
+  &-text-area {
+    display: block;
+    width: 448px;
+    height: 120px;
+    padding: 12px 16px;
+    resize: none;
+    &:not(:placeholder-shown) ~ .modal-text-area-label,
+    &:focus-within ~ .modal-text-area-label {
+      transform: translate(0, -30px);
+    }
+
+    &-label {
+      left: 16px;
+    }
+    &-container {
+      margin-bottom: 20px;
+    }
+  }
+
+  .crosshair-icon {
+    width: 11px;
+    height: 11px;
+  }
+  .license-link {
+    text-decoration: underline;
+    color: $accent-color;
+  }
+  .submit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 55px;
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+    color: $third-text-color;
+    font-size: 16px;
+    line-height: 1.875;
+    cursor: pointer;
+  }
+  input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox-icon {
+    opacity: 0;
+    width: 12px;
+    height: 9px;
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    pointer-events: none;
+    &-container {
+      position: relative;
+      & input[type="checkbox"]:checked ~ .checkbox-icon {
+        opacity: 1;
+      }
+      & input[type="checkbox"]:checked ~ .modal-checkbox-label:before {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        transition: $transition-time-cubic;
+        transition-property: background-color, border-color;
+      }
+    }
+  }
+}

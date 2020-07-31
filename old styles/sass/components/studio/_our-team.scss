@@ -1,0 +1,67 @@
+.social-network {
+  &-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    & li:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  &-icon {
+    width: 20px;
+    height: 20px;
+    fill: $icon-fill-color;
+  }
+  &-link {
+    @extend %flex-center;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      border-radius: 50%;
+      color: $third-text-color;
+      transition: $transition-time-cubic background-color;
+      & .social-network-icon {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+.our-team {
+  text-align: center;
+  background-color: $link-icon-background-color;
+  padding-top: 94px;
+  padding-bottom: 94px;
+  &-title {
+    margin-bottom: 50px;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-item {
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 0px 0px 4px 4px;
+    max-width: 270px;
+    background-color: $third-text-color;
+  }
+}
+.employee-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.18;
+  letter-spacing: 0.48px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.specialization {
+  font-size: 16px;
+  line-height: 1.18;
+  letter-spacing: 0.48px;
+  color: $secondary-text-color;
+  margin-bottom: 16px;
+}
