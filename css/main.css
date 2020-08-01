@@ -1331,6 +1331,9 @@ address {
     max-width: 300px;
     max-height: 600px;
   }
+  .modal-form-container {
+    margin-bottom: 15px;
+  }
   .modal-text-area {
     max-width: 240px;
   }

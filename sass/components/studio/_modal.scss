@@ -196,6 +196,9 @@
   .modal {
     max-width: 300px;
     max-height: 600px;
+    &-form-container {
+      margin-bottom: 15px;
+    }
     &-text-area {
       max-width: 240px;
     }
