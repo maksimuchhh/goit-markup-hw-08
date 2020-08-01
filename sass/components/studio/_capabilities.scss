@@ -1,5 +1,8 @@
 .capabilities {
   display: none;
+  @media screen and(min-width:1230px) {
+    display: block;
+  }
   text-align: center;
   padding-bottom: 94px;
 

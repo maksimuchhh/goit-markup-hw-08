@@ -4,8 +4,34 @@
   display: flex;
 }
 
+.main-nav {
+  justify-content: space-between;
+}
 .header {
+  &-contacts {
+    & li:not(:last-child) {
+      margin-bottom: 10px;
+      @media screen and(min-width:1230px) {
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
+    }
+
+    flex-direction: column;
+    @media screen and(min-width:1230px) {
+      flex-direction: row;
+      align-items: center;
+    }
+    justify-content: center;
+  }
   &-logo {
+    @media screen and(min-width:768px) {
+      padding-top: 20px;
+      padding-bottom: 21px;
+    }
+    @media screen and(min-width:1230px) {
+      margin-right: 85px;
+    }
     display: block;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -13,23 +39,53 @@
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     font-size: 24px;
-    line-height: 28px;
+    line-height: 1.66;
     color: #000000;
     letter-spacing: 0.78px;
   }
   &-list {
-    display: none;
+    @media screen and(max-width:767px) {
+      display: none;
+    }
+    @media screen and(min-width:1230px) {
+      margin-right: auto;
+    }
+    & > li:not(:last-child) {
+      margin-right: 50px;
+    }
   }
   &-link {
-    display: none;
+    @media screen and(max-width:767px) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    color: $secondary-text-color;
+    font-weight: 500;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      fill: $accent-color;
+      transition: $transition-time-cubic;
+      transition-property: color, fill;
+    }
   }
 }
 .menu {
-  width: 40px;
-  height: 40px;
-  margin-left: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  display: none;
+}
+.menu {
+  @media screen and(max-width:767px) {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .logo-web {
@@ -38,11 +94,23 @@
 header {
   border-bottom: 1px solid #ececec;
 }
-.our-pages {
-  &:hover,
-  &:focus {
-    color: $accent-color;
+@media screen and(min-width:768px) {
+  .our-pages {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    letter-spacing: 0.28px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    letter-spacing: 0.28px;
     transition: $transition-time-cubic color;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      transition: $transition-time-cubic color;
+    }
   }
 }
 
@@ -64,7 +132,7 @@ header {
     top: 77px;
     width: 100%;
     height: 4px;
-    background-color: var(--accent-color);
+    background-color: $accent-color;
     border-radius: 2px;
   }
 }
