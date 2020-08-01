@@ -1325,4 +1325,17 @@ address {
   -webkit-transition-property: background-color, border-color;
   transition-property: background-color, border-color;
 }
+
+@media screen and (max-width: 450px) {
+  .modal {
+    max-width: 300px;
+    max-height: 680px;
+  }
+  .modal-text-area {
+    max-width: 240px;
+  }
+  .modal-input {
+    max-width: 240px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
