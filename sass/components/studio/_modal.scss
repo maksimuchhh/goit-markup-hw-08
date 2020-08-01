@@ -195,12 +195,15 @@
 @media screen and(max-width:450px) {
   .modal {
     max-width: 300px;
-    max-height: 680px;
+    max-height: 600px;
     &-text-area {
       max-width: 240px;
     }
     &-input {
       max-width: 240px;
+    }
+    &-wrapper {
+      padding: 30px;
     }
   }
 }
