@@ -192,10 +192,13 @@
   }
 }
 
-@media screen and(max-width:450px) {
+@media screen and(max-width:449px) {
   .modal {
     max-width: 300px;
     max-height: 600px;
+    &-header {
+      margin-bottom: 15px;
+    }
     &-form-container {
       margin-bottom: 15px;
     }
