@@ -462,9 +462,17 @@ input {
 }
 
 .main-nav {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .main-nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .header-contacts {
@@ -479,6 +487,12 @@ input {
 
 .header-contacts li:not(:last-child) {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .header-contacts li:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }
 
 @media screen and (min-width: 1230px) {
@@ -509,13 +523,14 @@ input {
   font-size: 24px;
   line-height: 1.66;
   color: #000000;
-  letter-spacing: 0.78px;
+  letter-spacing: 0.38px;
 }
 
 @media screen and (min-width: 768px) {
   .header-logo {
     padding-top: 20px;
     padding-bottom: 21px;
+    margin-right: 80px;
   }
 }
 
@@ -525,15 +540,15 @@ input {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
   .header-list {
-    display: none;
+    margin-right: 85px;
   }
 }
 
 @media screen and (min-width: 1230px) {
   .header-list {
-    margin-right: auto;
+    margin-right: 305px;
   }
 }
 
@@ -555,9 +570,10 @@ input {
   font-weight: 500;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .header-link {
-    display: none;
+    font-size: 18px;
+    line-height: 1.66;
   }
 }
 
@@ -570,21 +586,6 @@ input {
   transition-property: color, fill;
 }
 
-.menu {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .menu {
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin-left: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-
 .logo-web {
   color: #2196f3;
 }
@@ -593,22 +594,26 @@ header {
   border-bottom: 1px solid #ececec;
 }
 
+.our-pages {
+  letter-spacing: 0.28px;
+  color: #212121;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
+}
+
+.our-pages:hover, .our-pages:focus {
+  color: #2196f3;
+  -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
+}
+
 @media screen and (min-width: 768px) {
-  .our-pages {
+  .our-pages:hover, .our-pages:focus {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
-    letter-spacing: 0.28px;
-    color: var(--primary-text-color);
-    font-weight: 500;
-    letter-spacing: 0.28px;
-    -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
-  }
-  .our-pages:hover, .our-pages:focus {
-    color: #2196f3;
-    -webkit-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) color;
   }
 }
 
@@ -631,6 +636,121 @@ header {
   height: 4px;
   background-color: #2196f3;
   border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .current-page::after {
+    top: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .current-page::after {
+    top: 45px;
+  }
+}
+
+.menu-button {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-button {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .menu-button .menu-icon-crosshair {
+    display: none;
+  }
+  .menu-button.is-open .menu-icon-crosshair {
+    display: block;
+  }
+  .menu-button.is-open .menu-icon-menu {
+    display: none;
+  }
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .navigation {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .navigation.is-open {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 60px 0;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-contacts {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-list > li:last-child {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-list > li:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 18px;
+    line-height: 1.66;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    position: relative;
+  }
 }
 
 .hero-header {
@@ -675,17 +795,12 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 400px;
   text-align: center;
   background-size: cover;
   background-position: center;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.8)), to(rgba(47, 48, 58, 0.8))), url(../images/header-img.jpg);
   background-image: linear-gradient(rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)), url(../images/header-img.jpg);
-}
-
-@media screen and (min-width: 768px) {
-  .hero-section {
-    height: 400px;
-  }
 }
 
 @media screen and (min-width: 1230px) {
