@@ -100,11 +100,11 @@ header {
   &:focus {
     color: $accent-color;
     transition: $transition-time-cubic color;
-    @media screen and(min-width:768px) {
-      display: block;
-      padding-top: 32px;
-      padding-bottom: 32px;
-    }
+  }
+  @media screen and(min-width:768px) {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 }
 
@@ -124,7 +124,7 @@ header {
       top: 30px;
     }
     @media screen and(min-width:768px) {
-      top: 45px;
+      top: 76px;
     }
     content: "";
     display: block;
