@@ -697,6 +697,7 @@ header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    z-index: 10;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1605,6 +1606,13 @@ address {
           transform: translateY(101%);
 }
 
+@media screen and (max-width: 340px) {
+  .product-description {
+    padding: 30px 10px;
+    font-size: 17px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .product-description {
     padding: 49px 24px;
@@ -1743,8 +1751,8 @@ address {
   transition-property: color, -webkit-transform;
   transition-property: color, transform;
   transition-property: color, transform, -webkit-transform;
-  -webkit-transform: translate(-25px, -30px);
-          transform: translate(-25px, -30px);
+  -webkit-transform: translate(-25px, -26px);
+          transform: translate(-25px, -26px);
   color: #2196f3;
 }
 
@@ -1791,7 +1799,7 @@ address {
 .modal-checkbox-label:before {
   position: absolute;
   display: block;
-  top: 1px;
+  top: 2px;
   left: 0;
   content: "";
   width: 16px;

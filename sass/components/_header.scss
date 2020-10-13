@@ -169,6 +169,7 @@ header {
   &.is-open {
     @media screen and(max-width:767px) {
       display: flex;
+      z-index: 10;
       flex-direction: column;
       position: absolute;
       top: 100%;

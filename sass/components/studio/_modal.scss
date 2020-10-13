@@ -90,7 +90,7 @@
     &:focus ~ .modal-label {
       transition: $transition-time-cubic;
       transition-property: color, transform;
-      transform: translate(-25px, -30px);
+      transform: translate(-25px, -26px);
       color: $accent-color;
     }
     &:focus-within ~ .modal-icon {
@@ -121,7 +121,7 @@
     &:before {
       position: absolute;
       display: block;
-      top: 1px;
+      top: 2px;
       left: 0;
       content: "";
       width: 16px;
